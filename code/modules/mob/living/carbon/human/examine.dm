@@ -113,12 +113,6 @@
 				if(their_god)
 					. += (user_side == mob_side) ? span_notice("Fellow [their_god.name] supporter!") : span_userdanger("Vile [their_god.name] supporter!")
 
-		if(name in GLOB.excommunicated_players)
-			. += span_userdanger("HERETIC! SHAME!")
-
-		if(name in GLOB.outlawed_players)
-			. += span_userdanger("OUTLAW!")
-
 		if(HAS_TRAIT(user, TRAIT_JUSTICARSIGHT) && !HAS_TRAIT(src, TRAIT_DECEIVING_MEEKNESS))
 			for(var/datum/bounty/b in GLOB.head_bounties) //I hate this.
 				if(b.target == real_name)
